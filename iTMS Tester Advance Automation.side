@@ -2,7 +2,7 @@
   "id": "2581d388-80a4-4dc8-bed2-dfffb83ed2b5",
   "version": "2.0",
   "name": "iTMS Tester Advance Automation",
-  "url": "http://www.practiceselenium.com",
+  "url": "http://automationpractice.com/index.php",
   "tests": [{
     "id": "fe0396d8-0d6b-4969-8b77-07684bc44985",
     "name": "Practice Form",
@@ -10,7 +10,7 @@
       "id": "901618ea-df9f-4eb1-ba7b-f79ad84a6cc2",
       "comment": "",
       "command": "open",
-      "target": "/practice-form.html",
+      "target": "http://www.practiceselenium.com/practice-form.html",
       "targets": [],
       "value": ""
     }, {
@@ -259,15 +259,153 @@
       ],
       "value": ""
     }]
+  }, {
+    "id": "62aefbd2-16c5-43eb-8efa-def4757b0431",
+    "name": "Switch Windows",
+    "commands": [{
+      "id": "61898a1e-8ea8-4e70-83e5-1361664831c9",
+      "comment": "",
+      "command": "open",
+      "target": "https://itmscoaching.herokuapp.com/switch-window",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cd547b3c-fd7e-4e08-b86c-97ce48d7bd8e",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "974x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7de3eb54-ff32-44ee-a2b1-0f9410ad78a1",
+      "comment": "",
+      "command": "click",
+      "target": "id=new-tab-button",
+      "targets": [
+        ["id=new-tab-button", "id"],
+        ["css=#new-tab-button", "css:finder"],
+        ["xpath=//button[@id='new-tab-button']", "xpath:attributes"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Open new tab')]", "xpath:innerText"]
+      ],
+      "value": "",
+      "opensWindow": true,
+      "windowHandleName": "win9589",
+      "windowTimeout": 2000
+    }, {
+      "id": "51c8fbe7-94dc-40d4-9c15-e9635b105975",
+      "comment": "",
+      "command": "storeWindowHandle",
+      "target": "root",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "269ac80f-aa4e-4e93-a38a-7aeb4ab79b56",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${win9589}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9932724e-b7d6-43bd-86a9-31bc90926b1f",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${root}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f21894ea-829f-484e-90ce-e403a80dee9e",
+      "comment": "",
+      "command": "click",
+      "target": "id=alert-button",
+      "targets": [
+        ["id=alert-button", "id"],
+        ["css=#alert-button", "css:finder"],
+        ["xpath=//button[@id='alert-button']", "xpath:attributes"],
+        ["xpath=//div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Open alert')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "694cf5e1-3b54-4d82-aeaa-d7cc7a79cea9",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "This is a test alert!",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "6cb300e0-8cb9-427e-8a6b-f2527476f2ed",
+    "name": "Verify",
+    "commands": [{
+      "id": "81d89abe-d89b-47e6-a853-d5e935936551",
+      "comment": "",
+      "command": "open",
+      "target": "http://automationpractice.com/index.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3fa38612-4e91-4842-b72e-b2af9d74672c",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "974x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "aea4f5fd-552d-42d4-89f5-555469d56728",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Sign in",
+      "targets": [
+        ["linkText=Sign in", "linkText"],
+        ["css=.login", "css:finder"],
+        ["xpath=//a[contains(text(),'Sign in')]", "xpath:link"],
+        ["xpath=//header[@id='header']/div[2]/div/div/nav/div/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://automationpractice.com/index.php?controller=my-account']", "xpath:href"],
+        ["xpath=//nav/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Sign in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f7662bc7-496f-4935-8532-908fcfc12187",
+      "comment": "",
+      "command": "click",
+      "target": "css=#SubmitLogin > span",
+      "targets": [
+        ["css=#SubmitLogin > span", "css:finder"],
+        ["xpath=//button[@id='SubmitLogin']/span", "xpath:idRelative"],
+        ["xpath=//p[2]/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e969f6d7-a1bd-4ae7-b81f-5a3668ea0c0d",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=ol > li",
+      "targets": [
+        ["css=ol > li", "css:finder"],
+        ["xpath=//div[@id='center_column']/div/ol/li", "xpath:idRelative"],
+        ["xpath=//ol/li", "xpath:position"],
+        ["xpath=//li[contains(.,'An email address required.')]", "xpath:innerText"]
+      ],
+      "value": "An email address required."
+    }, {
+      "id": "52187b6b-2bb5-47de-bb83-685d15527b4d",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
   }],
   "suites": [{
     "id": "fc145172-63c4-4b1a-86b0-f4b2331e59e5",
-    "name": "Default Suite",
+    "name": "Ngày 1",
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
-    "tests": ["fe0396d8-0d6b-4969-8b77-07684bc44985"]
+    "tests": ["fe0396d8-0d6b-4969-8b77-07684bc44985", "62aefbd2-16c5-43eb-8efa-def4757b0431"]
   }],
-  "urls": ["http://www.practiceselenium.com/"],
+  "urls": ["http://www.practiceselenium.com/", "https://itmscoaching.herokuapp.com/switch-window", "http://automationpractice.com/index.php"],
   "plugins": []
 }
